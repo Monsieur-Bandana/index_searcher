@@ -30,6 +30,7 @@ if __name__ == '__main__':
         texti = stri.text
         x = texti.split()
         res = []
+        res.append(url)
         i = 0
         while (i < len(x)):
             if x[i].find("Sitemap:") == 0 or x[i].find("sitemap:") == 0:  # outcome = array
@@ -39,10 +40,9 @@ if __name__ == '__main__':
 
         if (len(res) == 0):
             noResults.append(url)
-        with open('robotstxttest.csv', 'a') as f_object:
-            row = [url, res]
+        with open('robotstxt.csv', 'a', newline='') as f_object:
             writer_object = writer(f_object)
-            writer_object.writerow(row)
+            writer_object.writerow(res)
             f_object.close()
 
     for row in csvreader:
@@ -59,4 +59,4 @@ if __name__ == '__main__':
         findSitemap(url, el1)
        # finalFunct(el1.text, numOfEr)
 
-    print("numOfEr " + len(noResults) + "        " + noResults)
+    print("numOfEr " + str(len(noResults)) + "        " + str(noResults))
