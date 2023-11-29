@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from csv import writer
 import xml.etree.ElementTree as ET
-from a_general import name_creator
+from a_general import name_creator, progress_definer
 
 import time
 
@@ -40,9 +40,8 @@ if __name__ == '__main__':
         if str_el.startswith("<loc>"):
             str_el = str_el[5:-6]
             links.append(str_el)
-    i = 1
+
     for link in links:
-        print("link no " + str(i) + ", of " + str(len(links)) + " links")
         driver.get(link)
         tag_names = ['div', 'a', 'p', 'span', 'body']
         els = []
@@ -60,6 +59,6 @@ if __name__ == '__main__':
         with open(filename, 'w') as file:
             # Write some text to the file
             file.write(str(els))
-        i = i+1
+        i = progress_definer(i, links)
 
         time.sleep(2.5)

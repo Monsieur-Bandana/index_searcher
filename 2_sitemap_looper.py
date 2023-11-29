@@ -1,7 +1,7 @@
 import csv
 import undetected_chromedriver as uc
 from selenium import webdriver
-from a_general import name_creator
+from a_general import name_creator, progress_definer
 
 import csv
 from bs4 import BeautifulSoup
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     driver = uc.Chrome(options=options)
 
     elemnts = []
-
+    i = 1
     for address in lineToRead[1:]:
         driver.get(address)
 
@@ -48,5 +48,5 @@ if __name__ == '__main__':
             writer_object = writer(f_object)
             writer_object.writerow(links)
         time.sleep(2.5)
-
+        i = progress_definer(i, lineToRead[1:])
         f_object.close()

@@ -10,3 +10,10 @@ def name_creator(link, filetype, prfx=""):
 
     filename = prfx + resulting_string + "." + filetype
     return filename
+
+
+def progress_definer(i, listi):
+    print("step no " + str(i) + ", of " +
+          str(len(listi)) + " total steps completed")
+    i = i+1
+    return i
