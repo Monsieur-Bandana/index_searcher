@@ -1,6 +1,7 @@
 import csv
 import undetected_chromedriver as uc
 from selenium import webdriver
+from a_general import name_creator
 
 import csv
 from bs4 import BeautifulSoup
@@ -41,18 +42,7 @@ if __name__ == '__main__':
                 str_el = str_el[5:-6]
                 links.append(str_el)
 
-        filename = lineToRead[0]
-
-        original_string = filename
-        characters_to_remove = [':', '/', '.']
-
-        # Using a loop to remove characters
-        resulting_string = ''.join(
-            char for char in original_string if char not in characters_to_remove)
-
-        print(resulting_string)
-
-        filename = resulting_string + ".csv"
+        filename = name_creator(lineToRead[0], "csv")
 
         with open(filename, 'a', newline='') as f_object:
             writer_object = writer(f_object)
