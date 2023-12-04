@@ -1,3 +1,6 @@
+from csv import writer
+
+
 def name_creator(link, filetype, prfx=""):
     original_string = link
     characters_to_remove = [':', '/', '.']
@@ -17,3 +20,11 @@ def progress_definer(i, listi):
           str(len(listi)) + " total steps completed")
     i = i+1
     return i
+
+
+def createCsvFile(filename, res):
+    filename = filename + '.csv'
+    with open(filename, 'a', newline='') as f_object:
+        writer_object = writer(f_object)
+        writer_object.writerow(res)
+        f_object.close()

@@ -8,6 +8,7 @@ from csv import writer
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.proxy import Proxy, ProxyType
+from a_general import createCsvFile
 
 
 import time
@@ -40,10 +41,8 @@ if __name__ == '__main__':
 
         if (len(res) == 0):
             noResults.append(url)
-        with open('robotstxt.csv', 'a', newline='') as f_object:
-            writer_object = writer(f_object)
-            writer_object.writerow(res)
-            f_object.close()
+
+        createCsvFile('robotstxt2', res)
 
     for row in csvreader:
         url = row[0]+"robots.txt"

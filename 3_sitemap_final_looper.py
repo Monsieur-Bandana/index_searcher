@@ -1,7 +1,7 @@
 import csv
 import undetected_chromedriver as uc
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
 import csv
 from bs4 import BeautifulSoup
 import undetected_chromedriver as uc
@@ -41,6 +41,7 @@ if __name__ == '__main__':
             str_el = str_el[5:-6]
             links.append(str_el)
 
+    i = 1
     for link in links:
         driver.get(link)
         tag_names = ['div', 'a', 'p', 'span', 'body']
@@ -52,13 +53,18 @@ if __name__ == '__main__':
                 print("Element not found. NoSuchElementException occurred.")
                 continue
             for el in elements:
-                els.append(el.text)
+                try:
+                    els.append(el.text)
+                except StaleElementReferenceException:
+                    print(link + " stale element not found")
+                    continue
 
         filename = name_creator(link, "txt", "crwl_test/")
 
-        with open(filename, 'w') as file:
-            # Write some text to the file
+        with open(filename, 'w', encoding="utf-8") as file:
+
             file.write(str(els))
+
         i = progress_definer(i, links)
 
         time.sleep(2.5)
