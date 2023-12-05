@@ -9,6 +9,7 @@ from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 from a_general import createCsvFile
+from selenium.webdriver.remote.webelement import WebElement
 
 
 import time
@@ -27,7 +28,7 @@ if __name__ == '__main__':
 
     noResults = []
 
-    def findSitemap(url, stri):
+    def findSitemap(url, stri: WebElement):
         texti = stri.text
         x = texti.split()
         res = []
@@ -42,7 +43,7 @@ if __name__ == '__main__':
         if (len(res) == 0):
             noResults.append(url)
 
-        createCsvFile('robotstxt2', res)
+        createCsvFile('robotstxt3', res)
 
     for row in csvreader:
         url = row[0]+"robots.txt"

@@ -1,17 +1,22 @@
 from csv import writer
 
 
-def name_creator(link, filetype, prfx=""):
+def name_creator(link: str, filetype="", prfx=""):
     original_string = link
     characters_to_remove = [':', '/', '.']
 
     # Using a loop to remove characters
     resulting_string = ''.join(
         char for char in original_string if char not in characters_to_remove)
-    resulting_string = resulting_string.replace("http", "")
-    resulting_string = resulting_string.replace("www", "")
 
-    filename = prfx + resulting_string + "." + filetype
+    resulting_string = resulting_string.replace("https", "")
+    resulting_string = resulting_string.replace("http", "")
+
+    resulting_string = resulting_string.replace("www", "")
+    if filetype != "":
+        filetype = "." + filetype
+
+    filename = prfx + resulting_string + filetype
     return filename
 
 
