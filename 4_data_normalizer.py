@@ -1,4 +1,3 @@
-# Replace with the actual path to your TXT file
 from nltk.tokenize import word_tokenize
 import nltk
 import string
@@ -41,4 +40,5 @@ for filename in os.listdir(folder):
         print(f"The file '{file_path}' was not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
 createCsvFile(folder+"/"+csvName, res)
