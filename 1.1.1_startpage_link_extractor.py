@@ -27,25 +27,22 @@ if __name__ == '__main__':
 
     noResults = []
 
-    def selectElType(typeAsString: str):
+    def selectElType(typeAsString: str, url) -> list[str]:
 
         el1 = driver.find_element(By.TAG_NAME, typeAsString)
-        findLinksInEl(url, el1, typeAsString)
-
-    def findLinksInEl(url: str, stri: WebElement, typeAsString: str):
-        res = []
+        res: list[WebElement] = []
         try:
-            res = stri.find_elements(By.TAG_NAME, 'a')
+            res = el1.find_elements(By.TAG_NAME, 'a')
         except:
             print("no links on page " + url)
-        res_links = [url, typeAsString]
+        res_links: list[str] = []
         try:
             for el in res:
-                link = el.get_attribute("href")
+                link: str = el.get_attribute("href")
                 res_links.extend([link])
         except:
             print("################## iterabel exception in "+url)
-        createCsvFile('el_links', res_links)
+        return res_links
 
     for row in csvreader:
         url = row[0]
@@ -57,17 +54,18 @@ if __name__ == '__main__':
             continue
         time.sleep(2.5)
         # elToLookInto = ["footer", "header", "body"]
-        elToLookInto = ["body"]
-        for el in elToLookInto:
+        elToLookInto = ["footer"]
+        for elType in elToLookInto:
+            res = [url, elType]
             try:
-                selectElType(el)
+                resli = selectElType(elType, url)
+                res.extend(resli)
 
             except NoSuchElementException:
                 print(
-                    el+"-Element not found. NoSuchElementException occurred on page: " + url)
-                continue
+                    elType+"-Element not found. NoSuchElementException occurred on page: " + url)
+            createCsvFile('el_links2', res)
 
         # print("el1------------> neu" + el1.text)
        # finalFunct(el1.text, numOfEr)
-
-    print("numOfEr " + str(len(noResults)) + "        " + str(noResults))
+    driver.quit()

@@ -1,0 +1,47 @@
+Home
+Platform
+About
+Media
+Login
+Request a Demo
+
+
+
+
+
+
+The First Digital Transfer Agent that:
+October 12, 2023 – Austin, TX
+Vertalo Unveils Digital TA and Tokenization Platform Implementable on Institution’s 1st Party Cloud Architecture
+Vertalo’s API-first Transfer Agent and Tokenization Platform is the first platform that combines traditional and tokenized transfer agency that can run safely and securely on an institution's own cloud architecture. Read the press release.
+Hear from General Counsel Gautam Gujral at STA’s Annual Conference, 24–26 October
+Vertalo's Shared Ledger Technology connects the Ecosystem
+Watch DAW’s Fireside Chat: Vertalo CEO Dave Hendricks and Partner SMFL's Yuki Utsumi
+Modernizing Private Asset Markets through APIs, Shared Ledger Technology and Tokenization.
+
+Private Asset Markets suffer from the lack of interoperability of legacy systems, resulting in costly inefficiencies in data sharing and management. 
+
+Legacy systems not designed for new system integrations make it difficult to implement new, innovative technologies that minimize these inefficiencies. 
+
+Vertalo is purpose-built to solve these problems by enabling interoperability, transparency, and security. 
+APIs
+Integrate both internal and 3rd-party software systems across the digital asset ecosystem, including asset managers, exchanges, broker-dealers, transfer agents, custodians, and more with Vertalo’s APIs.
+Shared Ledger Technology
+Enhance data management with integrated, automated, and multi-functional data sharing capabilities using Vertalo’s Shared Ledger technology.
+Tokenization
+Deploy customizable and upgradable smart contracts to give issuers and investors the efficiencies of digitization and tokenization working in harmony via the Vertalo Securities Protocol (VSP). 
+API-First Architecture
+Leverage Vertalo's interface or build your own workflow and experience on Vertalo's APIs.
+Develop on Vertalo
+Partners
+See who Vertalo is assisting in leading the digital asset industry.
+
+Vertalo's Partners
+Digital Transfer Agent
+Transfer, tokenization, and transformation as a platform service.
+License Vertalo's TA Technology
+Austin | New York
+Careers  |  FAQ  |  Newsletter  |  Partners  |  Request Transfer  |  Tech Blog
+
+Questions about your shares? Please contact your issuer.
+Copyright © 2023 Vertalo, A SeriesX company | Privacy Policy

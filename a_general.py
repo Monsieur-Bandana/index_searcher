@@ -1,5 +1,7 @@
 from csv import writer
 
+from selenium.webdriver.remote.webelement import WebElement
+
 
 def name_creator(link: str, filetype="", prfx=""):
     original_string = link
@@ -33,3 +35,11 @@ def createCsvFile(filename, res):
         writer_object = writer(f_object)
         writer_object.writerow(res)
         f_object.close()
+
+
+def extractText(url, stri: WebElement, folder=""):
+    texti = stri.text
+    filename = name_creator(url, "txt", folder)
+    with open(filename, 'w', encoding="utf-8") as file:
+
+        file.write(texti)

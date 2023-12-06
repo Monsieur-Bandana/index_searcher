@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 import time
 
 pyLinks = []
-file = open('robotstxttest3.csv', "r")
+file = open('robotstxt2.csv', "r")
 csvreader = csv.reader(file)
 
 lineToRead = next(csvreader)
